@@ -78,7 +78,7 @@ You can also try the below to see the result visually. Go inside
 - Integration with identity verification systems.
 
 ## Author
-- **Bibek Lakra** : [BibekLakra91](https://github.com/bibeklakra91)
+**Bibek Lakra** : [BibekLakra91](https://github.com/bibeklakra91)
 
 ## License
 This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
