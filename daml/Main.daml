@@ -1,0 +1,28 @@
+module Main where
+
+type ItemCustodyId = ContractId ItemCustody
+--tracks chain of custody of my property
+template ItemCustody
+  with
+    owner: Party
+    custodian: Party
+    itemName: Text
+  where
+    signatory owner
+    observer custodian
+
+    choice ReleaseItemTo : ItemCustodyId
+      with
+        friend : Party
+      controller owner
+      do
+        create this with
+          custodian = friend
+
+    choice ReturnItemTo : ItemCustodyId
+      with 
+        rightfulOwner : Party
+      controller custodian
+      do
+        create this with
+          custodian = rightfulOwner

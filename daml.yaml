@@ -1,0 +1,12 @@
+sdk-version: 2.10.0
+name: borrow
+source: daml
+init-script: Test:setup
+version: 0.0.1
+Parties:
+  - Abhay
+  - Bibek
+dependencies:
+  - daml-prim
+  - daml-stdlib
+  - daml-script

@@ -1,0 +1,26 @@
+module Test where
+
+import Daml.Script
+import Main
+
+--test
+setup : Script ()
+setup = script do 
+  abhay <- allocateParty "Abhay"
+  bibek <- allocateParty "Bibek"
+
+  brandNewCamera <- submit abhay do
+    createCmd ItemCustody with
+      owner = abhay
+      custodian = abhay
+      itemName = "Really Expensive Camera"
+
+  bibekHasCamera <- submit abhay do 
+    exerciseCmd brandNewCamera ReleaseItemTo with friend = bibek
+
+  returnedCamera <- submit bibek do
+    exerciseCmd bibekHasCamera ReturnItemTo with rightfulOwner = abhay
+  
+  -- explicitly exercise Archive here
+  submit abhay do
+    archiveCmd returnedCamera
