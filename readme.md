@@ -18,6 +18,7 @@ This project aims to resolve these challenges by:
 - **DAML JSON API and Sandbox:** Facilitating backend ledger interactions and providing the runtime environment.
 
 ## Smart Contract Design
+![Solution idea](img/sol-idea.png)<br>
 The DAML smart contract (`ItemCustody`) consists of the following primary fields and choices:
 
 ### Template Definition
@@ -60,6 +61,11 @@ Run DAML tests:
 ```shell
 daml test
 ```
+You can also try the below to see the result visually. Go inside 
+```
+<proj-dir>/daml/Test.daml
+```
+![script-result](img/script-result.png)
 
 ## Benefits
 - **Immutability:** All custody transactions are recorded immutably.
